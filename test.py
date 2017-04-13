@@ -81,3 +81,19 @@ for i in range(60):
     result.append(g[i%10] + z[i%12])
 print(result)
 
+l = list(range(5))
+list = l[5:1:-1]
+Str = 'abcde'
+s = Str[:-4:-1]
+Str = Str[0:1].upper() + Str[1:len(Str)]
+a = '1'
+b = '2'
+c = a + b
+print(isinstance(c, str))
+print(c)
+print(Str)
+print(l)
+print(list)
+
+print(abs(-100))
+
