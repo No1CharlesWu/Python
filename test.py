@@ -67,8 +67,17 @@ def move(n, a, b, c):
     pass
 
 
-
 a = 'A'
 b = 'B'
 c = 'C'
 move(3, a, b, c)
+
+g = "甲乙丙丁戊己庚辛壬癸"
+z = "子丑寅卯辰巳午未申酉戌亥"
+
+result = []
+for i in range(60):
+    print(g[i % 10] + z[i % 12])
+    result.append(g[i%10] + z[i%12])
+print(result)
+
