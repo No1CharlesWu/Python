@@ -97,3 +97,96 @@ print(list)
 
 print(abs(-100))
 
+
+class Student(object):
+    def __init__(self, name, score, privateName):
+        self.name = name
+        self.score = score
+        self.__privateName = privateName
+
+    def print_score(self):
+        print('%s 的分数是 %s。' % (self, a.score))
+
+
+a = Student('wb', 100, 'lwc')
+a.exe = 1000
+print(a.name, a.score, a.exe)
+a.print_score()
+print(a._Student__privateName)
+
+class animal(object):
+    def run(self):
+        print('< This is animal run() >')
+
+class dog(animal):
+    def run(self):
+        print('< This is dog run() >')
+
+class timer(object):
+    def run(self):
+        print('< This is timer run() >')
+
+def run_test(animal):
+    animal.run()
+
+class test(object):
+    name = []
+    def __init__(self):
+        self.name.append(1)
+
+    def print_name(self):
+        print('test',self.name)
+
+run_test(animal())
+run_test(dog())
+run_test(timer())
+
+print(dir(object))
+
+a = test()
+a.print_name()
+a.name = 2
+a.print_name()
+del(a.name)
+a.print_name()
+
+
+class Chain(object):
+
+    def __init__(self, path=''):
+        self._path = path
+
+    def __getattr__(self, path):
+        sb = Chain('%s/%s' % (self._path, path))
+        return sb
+
+    def __call__(self, path):
+        sba = Chain('%s/%s' % (self._path, path))
+        return sba
+
+
+print(Chain().status.user.timeline.list)
+
+print(Chain().users)
+a = Chain().users('michael')
+
+print(a)
+
+from enum import Enum, unique
+
+@unique
+class Weekday(Enum):
+    Sun = 0 # Sun的value被设定为0
+    Mon = 1
+    Tue = 2
+    Wed = 3
+    Thu = 4
+    Fri = 5
+    Sat = 6
+
+
+Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+for name, member in Month.__members__.items():
+    print(name, '=>', member, ',', member.value)
+
+print(Month.Jan.value)
