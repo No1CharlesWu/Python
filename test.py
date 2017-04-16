@@ -190,3 +190,42 @@ for name, member in Month.__members__.items():
     print(name, '=>', member, ',', member.value)
 
 print(Month.Jan.value)
+
+import os
+
+print(os.name)
+print(os.uname())
+print(os.environ)
+
+'''
+请尝试写一个验证Email地址的正则表达式。版本一应该可以验证出类似的Email：
+someone@gmail.com
+bill.gates@microsoft.com
+
+版本二可以验证并提取出带名字的Email地址：
+<Tom Paris> tom@voyager.org
+'''
+import re
+def is_email(str):
+    a = re.match(r'^([\w\.]*)@([\w]*).([\w]*)$', str)
+    if a:
+        print(a.groups())
+        return True
+    else:
+        return False
+
+print(is_email('someone@gmail.com'))
+print(is_email('bill.gat es@microsoft.com'))
+
+
+
+
+
+
+
+
+
+
+
+
+
