@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/two-sum/#/description
 class Solution(object):
-    def twoSum(self, nums, target):
+    def twosum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -13,7 +13,7 @@ class Solution(object):
                 if i is not j and nums[i] + nums[j] == target:
                     return [i, j]
 
-    def twoSum_Hash(self, nums, target):
+    def twosum_hash(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -28,7 +28,7 @@ class Solution(object):
             else:
                 buf_dict[target - nums[i]] = i
 
-    def twoSum_enumerate(self, nums, target):
+    def twosum_enumerate(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -42,6 +42,7 @@ class Solution(object):
                 dic[target - num] = i
 
 
-Solution.twoSum(Solution, [3, 2, 4], 6)
-Solution.twoSum_Hash(1, [3, 2, 4], 6)
-Solution.twoSum_enumerate(1, [3, 2, 4], 6)
+test = Solution()
+print(test.twosum([3, 2, 4], 6))
+print(test.twosum_hash([3, 2, 4], 6))
+print(test.twosum_enumerate([3, 2, 4], 6))
