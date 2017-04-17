@@ -17,9 +17,11 @@ test.assert_equals(breakChocolate(1, 1) , 0)
 
 
 # Solution:
+# 个人版本
 def breakChocolate(n, m):
     return n * m - 1 if n * m > 0 else 0
 
 
+# 网络版本
 def breakChocolate_new(n, m):
     return max(n * m - 1, 0)

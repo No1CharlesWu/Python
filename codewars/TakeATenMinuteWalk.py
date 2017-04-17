@@ -21,6 +21,7 @@ for i in range(2): # test as many times as you want, just change the number
 
 """
 
+
 # Solution:
 def isValidWalk(walk):
     # determine if walk is valid
