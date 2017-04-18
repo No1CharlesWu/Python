@@ -18,22 +18,16 @@ test.assert_equals(find_outlier([2,6,8,10,3]), 3)
 
 
 # Solution:
-from collections import Counter
-
-
 def find_outlier(integers):
-    # TODO: 写完
-    l = sorted(set(integers))
-    print(type(l))
-    c = Counter()
-    guard = l[0]
-    l = l[1:]
-    for i, num in enumerate(l):
-        tmp = (num - guard)
-        print(guard, tmp)
+    c_odd = []
+    c_even = []
+    for i in integers:
+        if i % 2 == 0:
+            c_even.append(i)
+        else:
+            c_odd.append(i)
 
-    print(l, l[0])
-    return None
+    return c_even[0] if len(c_even) == 1 else c_odd[0]
 
 
 print(find_outlier([12, 160, 2, 6, 8, 10, 2, 3]))
