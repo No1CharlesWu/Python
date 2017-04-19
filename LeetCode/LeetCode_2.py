@@ -55,6 +55,28 @@ class Solution(object):
 
         return return_head
 
+    # 网络版本，非常简洁
+    # carry, val = divmod(v1 + v2 + carry, 10)
+    # 学习了 divmod(a,b) 方法返回的是a//b（除法取整）以及a对b的余数
+
+    # @return a ListNode
+    def addTwoNumbers_new(self, l1, l2):
+        carry = 0
+        root = n = ListNode(0)
+        while l1 or l2 or carry:
+            v1 = v2 = 0
+            if l1:
+                v1 = l1.val
+                l1 = l1.next
+            if l2:
+                v2 = l2.val
+                l2 = l2.next
+            carry, val = divmod(v1 + v2 + carry, 10)
+            n.next = ListNode(val)
+            n = n.next
+        return root.next
+
+
 a = ListNode(3)
 b = ListNode(4)
 c = ListNode(2)
