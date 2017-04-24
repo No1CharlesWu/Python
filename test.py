@@ -217,7 +217,10 @@ def is_email(str):
 print(is_email('someone@gmail.com'))
 print(is_email('bill.gat es@microsoft.com'))
 
-
+a = 'a'
+print(chr(ord(a) + 1))
+for i in range(-5, 5):
+    print(i)
 
 
 
